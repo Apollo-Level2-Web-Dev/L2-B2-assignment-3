@@ -1,8 +1,7 @@
 {
-    "title": "Sample Course",
-    "instructor": "Jane Doe",
-    "categoryId": "123456789012345678901234",
-    "price": 49.99,
+    "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 39.99, // Updated value
     "tags": [
         {
             "name": "Programming",
@@ -13,12 +12,12 @@
             "isDeleted": false
         }
     ],
-    "startDate": "2023-01-15",
+    "startDate": "2023-03-15",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 12,
+    "durationInWeeks": 8,
     "details": {
-        "level": "Intermediate",
-        "description": "Detailed description of the course"
+        "level": "Intermediate", // Updated value
+        "description": "An introductory course to programming basics",
     }
 }

@@ -136,7 +136,7 @@ Implement proper error handling throughout the application. Use global error han
 ```
     
 
-### **2. Get Paginated and Filtered Courses. Don’t use the query builder technique which is shown in the module. Use your own implementation for pagination & filtering.**
+### 2. Get Paginated and Filtered Courses. Don’t use the query builder technique which is shown in the module. Use your own implementation for pagination & filtering.
 
 - Feel free to utilize raw queries or aggregations. You have the option to search on Google, explore YouTube, read various blogs and articles, or seek assistance from ChatGPT or other resources.
 
@@ -187,7 +187,7 @@ Implement proper error handling throughout the application. Use global error han
 ```
     
 
-### **3. Create a Category**
+### 3. Create a Category
 
 - **Endpoint:** **`POST /api/categories`**
 - **Request Body:**
@@ -211,7 +211,7 @@ Implement proper error handling throughout the application. Use global error han
 ```
     
 
-### **4. Get All Categories**
+### 4. Get All Categories
 
 - **Endpoint:** **`GET /api/categories`**
 - **Response:**
@@ -231,7 +231,7 @@ Implement proper error handling throughout the application. Use global error han
 ```
     
 
-### **5. Create a Review**
+### 5. Create a Review
 
 - **Endpoint:** **`POST /api/reviews`**
 - **Request Body:**
@@ -262,7 +262,7 @@ Implement proper error handling throughout the application. Use global error han
 
 ### 
 
-### 6**. Update a Course (Partial Update with Dynamic Update)**
+### 6. Update a Course (Partial Update with Dynamic Update)**
 
 - **Endpoint:** **`PUT /api/courses/:courseId`**
 - **Request Body:**
@@ -495,34 +495,39 @@ In this case, we are updating a primitive data type (price), and it's straightfo
 Suppose we have a course with the following details:
     
 ```json
-    {
-        "title": "Programming Basics",
-        "instructor": "John Doe",
-        "price": 29.99,
-        "tags": [
-    				 { "name": "Programming", "isDeleted": false },
-    				 { "name": "Web Development", "isDeleted": false }
-        ],
-        "startDate": "2023-03-15",
-        "language": "English",
-        "provider": "Tech Academy",
-        "durationInWeeks": 8,
-        "details": {
-            "level": "Beginner",
-            "description": "An introductory course to programming basics",
-    
+{
+    "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 29.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
         }
+    ],
+    "startDate": "2023-03-15",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Beginner",
+        "description": "An introductory course to programming basics",
     }
+}
 ```
     
 Now, the client wants to update the "level" of the course. The request body for the partial update might look like this:
     
 ```json
-    {
-        "details": {
-            "level": "Intermediate"
-        }
+{
+    "details": {
+        "level": "Intermediate"
     }
+}
 ```
     
 In this case, we are updating a non-primitive data type ("details" object), specifically the "level" field within it. The server should handle dynamic updates for non-primitive data correctly, preserving the existing details while updating only the specified fields.
@@ -530,23 +535,29 @@ In this case, we are updating a non-primitive data type ("details" object), spec
 After the update, the new course details would be:
     
 ```json
-    {
-        "title": "Programming Basics",
-        "instructor": "John Doe",
-        "price": 29.99,
-        "tags": [
-    				 { "name": "Programming", "isDeleted": false },
-    				 { "name": "Web Development", "isDeleted": false }
-        ],
-        "startDate": "2023-03-15",
-        "language": "English",
-        "provider": "Tech Academy",
-        "durationInWeeks": 8,
-        "details": {
-            "level": "Intermediate", // Updated value
-            "description": "An introductory course to programming basics",
+{
+    "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 29.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
         }
+    ],
+    "startDate": "2023-03-15",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Intermediate", // Updated value
+        "description": "An introductory course to programming basics",
     }
+}
 ```
 
 This ensures that only the specified field within the "details" object is updated, and the rest of the details remain unchanged. It's a crucial aspect of maintaining data consistency when dealing with non-primitive data structures.
@@ -556,60 +567,70 @@ This ensures that only the specified field within the "details" object is update
 Suppose we have a course with the following details:
     
 ```json
-    {
-        "title": "Programming Basics",
-        "instructor": "John Doe",
-        "price": 29.99,
-        "tags": [
-    				 { "name": "Programming", "isDeleted": false },
-    				 { "name": "Web Development", "isDeleted": false }
-        ],
-        "startDate": "2023-03-15",
-        "language": "English",
-        "provider": "Tech Academy",
-        "durationInWeeks": 8,
-        "details": {
-            "level": "Beginner",
-            "description": "An introductory course to programming basics",
+{
+    "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 29.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
         }
+    ],
+    "startDate": "2023-03-15",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Beginner",
+        "description": "An introductory course to programming basics",
     }
-    ```
+}    
+```
     
 Now, the client wants to update both the "price" and the "level" of the course. The request body for the partial update might look like this:
     
-    ```json
-    {
-        "price": 39.99,
-        "details": {
-            "level": "Intermediate"
-        }
+```json
+{
+    "price": 39.99,
+    "details": {
+        "level": "Intermediate"
     }
-    ```
+}
+```
     
 In this case, we are updating a primitive data type ("price") and a non-primitive data type ("level" within "details") simultaneously. The server should handle dynamic updates for both types correctly.
     
 After the update, the new course details would be:
     
 ```json
-    
-    {
-        "title": "Programming Basics",
-        "instructor": "John Doe",
-        "price": 39.99, // Updated value
-        "tags": [
-    				 { "name": "Programming", "isDeleted": false },
-    				 { "name": "Web Development", "isDeleted": false }
-        ],
-        "startDate": "2023-03-15",
-        "language": "English",
-        "provider": "Tech Academy",
-        "durationInWeeks": 8,
-        "details": {
-            "level": "Intermediate", // Updated value
-            "description": "An introductory course to programming basics",
+{
+    "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 39.99, // Updated value
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
         }
+    ],
+    "startDate": "2023-03-15",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Intermediate", // Updated value
+        "description": "An introductory course to programming basics",
     }
-    
+}
 ```
     
 This ensures that both the specified primitive field ("price") and the non-primitive field ("level" within "details") are updated independently, and the rest of the details remain unchanged. It's essential for maintaining data consistency when updating a mix of primitive and non-primitive data in a complex data structure.
