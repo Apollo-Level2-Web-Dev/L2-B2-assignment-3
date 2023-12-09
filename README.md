@@ -13,7 +13,7 @@
 ### **1. Course Model:**
 
 - **Fields:**
-    - **title (String):** A unique title of the course.
+    - **title (String):** A **unique** title of the course.
     - **instructor (String):** The instructor of the course.
     - **categoryId (Object ID):** A reference to the category collection.
     - **price (Number):** The price of the course.
