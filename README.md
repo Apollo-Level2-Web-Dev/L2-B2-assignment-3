@@ -454,7 +454,7 @@ Suppose we have a course with the following details:
 }
 ```
     
-    Now, the client wants to update the price of the course. The request body for the partial update might look like this:
+Now, the client wants to update the price of the course. The request body for the partial update might look like this:
     
 ```json
 {
@@ -462,7 +462,7 @@ Suppose we have a course with the following details:
 } 
 ```
     
-    In this case, we are updating a primitive data type (price), and it's straightforward. The new course details after the update will be:
+In this case, we are updating a primitive data type (price), and it's straightforward. The new course details after the update will be:
     
 ```json
 {
@@ -490,11 +490,11 @@ Suppose we have a course with the following details:
 }
 ```
     
-    ### **Example of Updating Non-Primitive Data (Using "level" in "details"):**
+### **Example of Updating Non-Primitive Data (Using "level" in "details"):**
     
-    Suppose we have a course with the following details:
+Suppose we have a course with the following details:
     
-    ```json
+```json
     {
         "title": "Programming Basics",
         "instructor": "John Doe",
@@ -513,23 +513,23 @@ Suppose we have a course with the following details:
     
         }
     }
-    ```
+```
     
-    Now, the client wants to update the "level" of the course. The request body for the partial update might look like this:
+Now, the client wants to update the "level" of the course. The request body for the partial update might look like this:
     
-    ```json
+```json
     {
         "details": {
             "level": "Intermediate"
         }
     }
-    ```
+```
     
-    In this case, we are updating a non-primitive data type ("details" object), specifically the "level" field within it. The server should handle dynamic updates for non-primitive data correctly, preserving the existing details while updating only the specified fields.
+In this case, we are updating a non-primitive data type ("details" object), specifically the "level" field within it. The server should handle dynamic updates for non-primitive data correctly, preserving the existing details while updating only the specified fields.
     
-    After the update, the new course details would be:
+After the update, the new course details would be:
     
-    ```json
+```json
     {
         "title": "Programming Basics",
         "instructor": "John Doe",
@@ -547,15 +547,15 @@ Suppose we have a course with the following details:
             "description": "An introductory course to programming basics",
         }
     }
-    ```
+```
+
+This ensures that only the specified field within the "details" object is updated, and the rest of the details remain unchanged. It's a crucial aspect of maintaining data consistency when dealing with non-primitive data structures.
     
-    This ensures that only the specified field within the "details" object is updated, and the rest of the details remain unchanged. It's a crucial aspect of maintaining data consistency when dealing with non-primitive data structures.
+### **Example of Updating Both Primitive and Non-Primitive Data:**
     
-    ### **Example of Updating Both Primitive and Non-Primitive Data:**
+Suppose we have a course with the following details:
     
-    Suppose we have a course with the following details:
-    
-    ```json
+```json
     {
         "title": "Programming Basics",
         "instructor": "John Doe",
@@ -575,7 +575,7 @@ Suppose we have a course with the following details:
     }
     ```
     
-    Now, the client wants to update both the "price" and the "level" of the course. The request body for the partial update might look like this:
+Now, the client wants to update both the "price" and the "level" of the course. The request body for the partial update might look like this:
     
     ```json
     {
@@ -586,11 +586,11 @@ Suppose we have a course with the following details:
     }
     ```
     
-    In this case, we are updating a primitive data type ("price") and a non-primitive data type ("level" within "details") simultaneously. The server should handle dynamic updates for both types correctly.
+In this case, we are updating a primitive data type ("price") and a non-primitive data type ("level" within "details") simultaneously. The server should handle dynamic updates for both types correctly.
     
-    After the update, the new course details would be:
+After the update, the new course details would be:
     
-    ```json
+```json
     
     {
         "title": "Programming Basics",
@@ -610,11 +610,11 @@ Suppose we have a course with the following details:
         }
     }
     
-    ```
+```
     
-    This ensures that both the specified primitive field ("price") and the non-primitive field ("level" within "details") are updated independently, and the rest of the details remain unchanged. It's essential for maintaining data consistency when updating a mix of primitive and non-primitive data in a complex data structure.
+This ensures that both the specified primitive field ("price") and the non-primitive field ("level" within "details") are updated independently, and the rest of the details remain unchanged. It's essential for maintaining data consistency when updating a mix of primitive and non-primitive data in a complex data structure.
 
-  ## Validation with Joi/Zod
+## Validation with Joi/Zod
 
 - Use Joi/zod to validate incoming data for user and order creation and updating operations.
 - Ensure that the data adheres to the structure defined in the models.
