@@ -832,6 +832,8 @@ This ensures that both the specified primitive field ("price") and the non-primi
 6. **Coding Style:**
     - Consider using linting tools (e.g., ESLint) to enforce coding style and identify potential issues.
     - Ensure there are at least 10 commits in your GitHub repository.
+7. **Data Sets for Examination:**
+    - Each Collection: Store a minimum of 2 data sets in each collection to facilitate examination and testing by the examiner.
 
 ***Not following the specified API endpoint structure, naming conventions, and other instructions will result in a deduction of marks.***
 
@@ -839,6 +841,8 @@ This ensures that both the specified primitive field ("price") and the non-primi
 
 - Share the GitHub repository link and the live deployment link as part of your submission.
 - Include a README file with clear instructions on how to run the application locally.
+
+*Note: Ensure that a minimum of 2 data sets is stored in each collection for the convenience of examination and testing by the examiner.*
 
 ### **Deadline:**
 
