@@ -285,6 +285,7 @@ Implement proper error handling throughout the application. Use global error han
         }
     ],
     "startDate": "2023-02-01",
+    "endDate":"2023-03-14",
     "language": "Spanish",
     "provider": "Code Masters",
     "durationInWeeks": 16,
@@ -318,6 +319,7 @@ Implement proper error handling throughout the application. Use global error han
             }
         ],
         "startDate": "2023-02-01",
+        "endDate":"2023-11-14",
         "language": "Spanish",
         "provider": "Code Masters",
         "durationInWeeks": 16,
@@ -357,6 +359,7 @@ Implement proper error handling throughout the application. Use global error han
                 }
             ],
             "startDate": "2023-02-01",
+            "endDate":"2023-11-14",
             "language": "Spanish",
             "provider": "Code Masters",
             "durationInWeeks": 16,
@@ -410,6 +413,7 @@ Implement proper error handling throughout the application. Use global error han
                 }
             ],
             "startDate": "2023-02-01",
+            "endDate":"2023-11-14",
             "language": "Spanish",
             "provider": "Code Masters",
             "durationInWeeks": 16,
@@ -444,6 +448,7 @@ Suppose we have a course with the following details:
         }
     ],
     "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
     "language": "English",
     "provider": "Tech Academy",
     "durationInWeeks": 8,
@@ -480,6 +485,7 @@ In this case, we are updating a primitive data type (price), and it's straightfo
         }
     ],
     "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
     "language": "English",
     "provider": "Tech Academy",
     "durationInWeeks": 8,
@@ -510,6 +516,7 @@ Suppose we have a course with the following details:
         }
     ],
     "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
     "language": "English",
     "provider": "Tech Academy",
     "durationInWeeks": 8,
@@ -550,6 +557,7 @@ After the update, the new course details would be:
         }
     ],
     "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
     "language": "English",
     "provider": "Tech Academy",
     "durationInWeeks": 8,
@@ -582,6 +590,7 @@ Suppose we have a course with the following details:
         }
     ],
     "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
     "language": "English",
     "provider": "Tech Academy",
     "durationInWeeks": 8,
@@ -623,6 +632,7 @@ After the update, the new course details would be:
         }
     ],
     "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
     "language": "English",
     "provider": "Tech Academy",
     "durationInWeeks": 8,
