@@ -55,7 +55,7 @@ Implement proper error handling throughout the application. Use global error han
 {
     "success": false,
     "message": "Duplicate Key Error!",
-    "errorMessages": [ 
+    "errorMessages": [
         {
             "path": "",
             "message": "E11000 duplicate key error collection: academy.courses index: title_1 dup key: { title: \\"Sample Course\\" }"
@@ -72,15 +72,54 @@ Implement proper error handling throughout the application. Use global error han
 - **Endpoint:** **`POST /api/course`**
 - **Request Body:**
     
-    ```json
-    {
+```json
+{
+    "title": "Sample Course",
+    "instructor": "Jane Doe",
+    "categoryId": "123456789012345678901234",
+    "price": 49.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
+        }
+    ],
+    "startDate": "2023-01-15",
+    "endDate":"2023-03-14",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 12,
+    "details": {
+        "level": "Intermediate",
+        "description": "Detailed description of the course"
+    }
+}
+```
+    
+- **Response:**
+```json
+{
+    "success": true,
+    "statusCode": 201,
+    "message": "Course created successfully",
+    "data": {
         "title": "Sample Course",
         "instructor": "Jane Doe",
-        "categoryId": "123456789012345678901234",  // Object ID reference to the category
+        "categoryId": "123456789012345678901234",
         "price": 49.99,
         "tags": [
-            { "name": "Programming", "isDeleted": false },
-            { "name": "Web Development", "isDeleted": false }
+            {
+                "name": "Programming",
+                "isDeleted": false
+            },
+            {
+                "name": "Web Development",
+                "isDeleted": false
+            }
         ],
         "startDate": "2023-01-15",
         "language": "English",
@@ -89,38 +128,10 @@ Implement proper error handling throughout the application. Use global error han
         "details": {
             "level": "Intermediate",
             "description": "Detailed description of the course",
-          }
-    }
-    ```
-    
-- **Response:**
-    
-    ```json
-    {
-        "success": true,
-        "statusCode": 201,
-        "message": "Course created successfully",
-        "data": {
-            "title": "Sample Course",
-            "instructor": "Jane Doe",
-            "categoryId": "123456789012345678901234",
-            "price": 49.99,
-           "tags": [
-    		        { "name": "Programming", "isDeleted": false },
-    		        { "name": "Web Development", "isDeleted": false }
-            ],
-            "startDate": "2023-01-15",
-            "language": "English",
-            "provider": "Tech Academy",
-            "durationInWeeks": 12,
-    				"details": {
-                "level": "Intermediate",
-                "description": "Detailed description of the course",
-            }
         }
     }
-    
-    ```
+}
+```
     
 
 ### **2. Get Paginated and Filtered Courses. Don’t use the technique which is shown in the module. use your implementation for pagination.**
@@ -130,40 +141,45 @@ Implement proper error handling throughout the application. Use global error han
     - page, limit, sortBy, sortOrder, minPrice, maxPrice, tags(name of the tag), startDate, language, provider, durationInWeeks, and level.
 - **Response:**
     
-    ```json
-    {
-        "success": true,
-        "statusCode": 200,
-        "message": "Courses retrieved successfully",
-        "meta": {
-            "page": 1,
-            "limit": 10,
-    				"total": 50
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Courses retrieved successfully",
+    "meta": {
+        "page": 1,
+        "limit": 10,
+        "total": 50
+    },
+    "data": [
+        {
+            "title": "Sample Course",
+            "instructor": "Jane Doe",
+            "categoryId": "123456789012345678901234",
+            "price": 49.99,
+            "tags": [
+                {
+                    "name": "Programming",
+                    "isDeleted": false
+                },
+                {
+                    "name": "Web Development",
+                    "isDeleted": false
+                }
+            ],
+            "startDate": "2023-01-15",
+            "language": "English",
+            "provider": "Tech Academy",
+            "durationInWeeks": 12,
+            "details": {
+                "level": "Intermediate",
+                "description": "Detailed description of the course",
+            }
         },
-        "data": [
-            {
-                "title": "Sample Course",
-                "instructor": "Jane Doe",
-                "categoryId": "123456789012345678901234",
-                "price": 49.99,
-                "tags": [
-    				        { "name": "Programming", "isDeleted": false },
-    				        { "name": "Web Development", "isDeleted": false }
-    						 ],
-                "startDate": "2023-01-15",
-                "language": "English",
-                "provider": "Tech Academy",
-                "durationInWeeks": 12,
-    				    "details": {
-    		            "level": "Intermediate",
-    		            "description": "Detailed description of the course",
-    		        }
-            },
-            // more courses
-        ]
-    }
-    
-    ```
+        // more courses
+    ]
+}
+```
     
 
 ### **3. Create a Category**
@@ -171,26 +187,23 @@ Implement proper error handling throughout the application. Use global error han
 - **Endpoint:** **`POST /api/categories`**
 - **Request Body:**
     
-    ```json
-    {
-        "name": "Programming"
-    }
-    
-    ```
+```json
+{
+    "name": "Programming"
+}
+```
     
 - **Response:**
-    
-    ```json
-    {
-        "success": true,
-        "statusCode": 201,
-        "message": "Category created successfully",
-        "data": {
-            "name": "Programming"
-        }
+```json
+{
+    "success": true,
+    "statusCode": 201,
+    "message": "Category created successfully",
+    "data": {
+        "name": "Programming"
     }
-    
-    ```
+}
+```
     
 
 ### **4. Get All Categories**
@@ -198,20 +211,19 @@ Implement proper error handling throughout the application. Use global error han
 - **Endpoint:** **`GET /api/categories`**
 - **Response:**
     
-    ```json
-    {
-        "success": true,
-        "statusCode": 200,
-        "message": "Categories retrieved successfully",
-        "data": [
-            {
-                "name": "Programming"
-            },
-            // more categories
-        ]
-    }
-    
-    ```
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Categories retrieved successfully",
+    "data": [
+        {
+            "name": "Programming"
+        },
+        // more categories
+    ]
+}
+```
     
 
 ### **5. Create a Review**
@@ -219,28 +231,28 @@ Implement proper error handling throughout the application. Use global error han
 - **Endpoint:** **`POST /api/reviews`**
 - **Request Body:**
     
-    ```json
-    {
+```json
+{
+    "courseId": "123456789012345678901234",
+    "rating": 4,
+    "comment": "Great course!"
+}
+```
+    
+- **Response:**
+    
+```json
+{
+    "success": true,
+    "statusCode": 201,
+    "message": "Review created successfully",
+    "data": {
         "courseId": "123456789012345678901234",
         "rating": 4,
         "comment": "Great course!"
     }
-    ```
-    
-- **Response:**
-    
-    ```json
-    {
-        "success": true,
-        "statusCode": 201,
-        "message": "Review created successfully",
-        "data": {
-            "courseId": "123456789012345678901234",
-            "rating": 4,
-            "comment": "Great course!"
-        }
-    }
-    ```
+}
+```
     
 
 ### 
@@ -251,54 +263,66 @@ Implement proper error handling throughout the application. Use global error han
 - **Request Body:**
     - You can send the partial body data to update the fields you want to update or the full data if you want to update every field of a course. Ensure dynamic updating for both primitive and non-primitive data to prevent the mutation of non-primitive data. (click here for more details)
     
-    ```json
-    {
+```json
+{
+    "title": "Updated Title",
+    "instructor": "New Instructor",
+    "categoryId": "123456789012345678901234",
+    "price": 59.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": true
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
+        }
+    ],
+    "startDate": "2023-02-01",
+    "language": "Spanish",
+    "provider": "Code Masters",
+    "durationInWeeks": 16,
+    "details": {
+        "level": "Intermediate",
+        "description": "Detailed description of the course"
+    }
+}
+```
+    
+- **Response:**
+    
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Course updated successfully",
+    "data": {
         "title": "Updated Title",
         "instructor": "New Instructor",
         "categoryId": "123456789012345678901234",
         "price": 59.99,
         "tags": [
-    				 { "name": "Programming", "isDeleted": true},
-    				 { "name": "Web Development", "isDeleted": false }
-    		],
+            {
+                "name": "Programming",
+                "isDeleted": true
+            },
+            {
+                "name": "Web Development",
+                "isDeleted": false
+            }
+        ],
         "startDate": "2023-02-01",
         "language": "Spanish",
         "provider": "Code Masters",
         "durationInWeeks": 16,
         "details": {
-                "level": "Intermediate",
-                "description": "Detailed description of the course"
-            }
-    }
-    ```
-    
-- **Response:**
-    
-    ```json
-    {
-        "success": true,
-        "statusCode": 200,
-        "message": "Course updated successfully",
-        "data": {
-            "title": "Updated Title",
-            "instructor": "New Instructor",
-            "categoryId": "123456789012345678901234",
-            "price": 59.99,
-            "tags": [
-    						 { "name": "Programming", "isDeleted": true},
-    						 { "name": "Web Development", "isDeleted": false }
-    		    ],
-            "startDate": "2023-02-01",
-            "language": "Spanish",
-            "provider": "Code Masters",
-            "durationInWeeks": 16,
-    			  "details": {
-                "level": "Intermediate",
-                "description": "Detailed description of the course"
-            }
+            "level": "Intermediate",
+            "description": "Detailed description of the course"
         }
     }
-    ```
+}
+```
     
 
 ### 7**. Get Course by ID with Reviews**
@@ -306,46 +330,52 @@ Implement proper error handling throughout the application. Use global error han
 - **Endpoint:** **`GET /api/courses/:courseId/reviews`**
 - **Response:**
     
-    ```json
-    {
-        "success": true,
-        "statusCode": 200,
-        "message": "Course and Reviews retrieved successfully",
-        "data": {
-            "course": {
-                "title": "Updated Title",
-                "instructor": "New Instructor",
-                "categoryId": "123456789012345678901234",
-                "price": 59.99,
-                "tags": [
-    				        { "name": "Programming", "isDeleted": false },
-    				        { "name": "Web Development", "isDeleted": false }
-    						 ],
-                "startDate": "2023-02-01",
-                "language": "Spanish",
-                "provider": "Code Masters",
-                "durationInWeeks": 16,
-    					  "details": {
-    	            "level": "Intermediate",
-    	            "description": "Detailed description of the course"
-    		        }
-            },
-            "reviews": [
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Course and Reviews retrieved successfully",
+    "data": {
+        "course": {
+            "title": "Updated Title",
+            "instructor": "New Instructor",
+            "categoryId": "123456789012345678901234",
+            "price": 59.99,
+            "tags": [
                 {
-                    "courseId": "123456789012345678901234",
-                    "rating": 5,
-                    "comment": "Awesome course!"
+                    "name": "Programming",
+                    "isDeleted": false
                 },
                 {
-                    "courseId": "123456789012345678901234",
-                    "rating": 4,
-                    "comment": "Great content!"
+                    "name": "Web Development",
+                    "isDeleted": false
                 }
-                // Additional reviews
-            ]
-        }
+            ],
+            "startDate": "2023-02-01",
+            "language": "Spanish",
+            "provider": "Code Masters",
+            "durationInWeeks": 16,
+            "details": {
+                "level": "Intermediate",
+                "description": "Detailed description of the course"
+            }
+        },
+        "reviews": [
+            {
+                "courseId": "123456789012345678901234",
+                "rating": 5,
+                "comment": "Awesome course!"
+            },
+            {
+                "courseId": "123456789012345678901234",
+                "rating": 4,
+                "comment": "Great content!"
+            }
+            // Additional reviews
+        ]
     }
-    ```
+}  
+```
     
     ### 8**. Get the Best Course Based on Average Review**
     
@@ -353,89 +383,107 @@ Implement proper error handling throughout the application. Use global error han
     - **Response:**
         - The response includes details about the course, its average rating, and the total number of reviews
     
-    ```json
-    {
-        "success": true,
-        "statusCode": 200,
-        "message": "Best course retrieved successfully",
-        "data": {
-            "course": {
-                "title": "Best Book Title",
-                "instructor": "New Instructor",
-                "categoryId": "123456789012345678901234",
-                "price": 59.99,
-                "tags": [
-    				        { "name": "Programming", "isDeleted": false },
-    				        { "name": "Web Development", "isDeleted": false }
-    						 ],
-                "startDate": "2023-02-01",
-                "language": "Spanish",
-                "provider": "Code Masters",
-                "durationInWeeks": 16,
-    					  "details": {
-    	            "level": "Intermediate",
-    	            "description": "Detailed description of the course"
-    		        }
-            },
-            "averageRating": 4.8,
-            "reviewCount": 50
-        }
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Best course retrieved successfully",
+    "data": {
+        "course": {
+            "title": "Best Book Title",
+            "instructor": "New Instructor",
+            "categoryId": "123456789012345678901234",
+            "price": 59.99,
+            "tags": [
+                {
+                    "name": "Programming",
+                    "isDeleted": false
+                },
+                {
+                    "name": "Web Development",
+                    "isDeleted": false
+                }
+            ],
+            "startDate": "2023-02-01",
+            "language": "Spanish",
+            "provider": "Code Masters",
+            "durationInWeeks": 16,
+            "details": {
+                "level": "Intermediate",
+                "description": "Detailed description of the course"
+            }
+        },
+        "averageRating": 4.8,
+        "reviewCount": 50
     }
-    ```
+}
+```
     
     ### **Example of Updating Primitive Data:**
     
     Suppose we have a course with the following details:
     
-    ```json
-    {
-        "title": "Programming Basics",
-        "instructor": "John Doe",
-        "price": 29.99,
-        "tags": [
-    				 { "name": "Programming", "isDeleted": false },
-    				 { "name": "Web Development", "isDeleted": false }
-    		],
-        "startDate": "2023-03-15",
-        "language": "English",
-        "provider": "Tech Academy",
-        "durationInWeeks": 8,
-        "details": {
-            "level": "Beginner",
-            "description": "An introductory course to programming basics",
+```json
+{
+    "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 29.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
         }
+    ],
+    "startDate": "2023-03-15",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Beginner",
+        "description": "An introductory course to programming basics",
     }
-    ```
+}
+```
     
     Now, the client wants to update the price of the course. The request body for the partial update might look like this:
     
-    ```json
-    {
-        "price": 39.99
-    }
-    ```
+```json
+{
+    "price": 39.99
+} 
+```
     
     In this case, we are updating a primitive data type (price), and it's straightforward. The new course details after the update will be:
     
-    ```json
-    {
-        "title": "Programming Basics",
-        "instructor": "John Doe",
-        "price": 39.99,
-        "tags": [
-    				 { "name": "Programming", "isDeleted": false },
-    				 { "name": "Web Development", "isDeleted": false }
-        ],
-        "startDate": "2023-03-15",
-        "language": "English",
-        "provider": "Tech Academy",
-        "durationInWeeks": 8,
-        "details": {
-            "level": "Beginner",
-            "description": "An introductory course to programming basics",
+```json
+{
+    "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 39.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
         }
+    ],
+    "startDate": "2023-03-15",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Beginner",
+        "description": "An introductory course to programming basics",
     }
-    ```
+}
+```
     
     ### **Example of Updating Non-Primitive Data (Using "level" in "details"):**
     

@@ -1,0 +1,24 @@
+{
+    "title": "Sample Course",
+    "instructor": "Jane Doe",
+    "categoryId": "123456789012345678901234",
+    "price": 49.99,
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
+        }
+    ],
+    "startDate": "2023-01-15",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 12,
+    "details": {
+        "level": "Intermediate",
+        "description": "Detailed description of the course"
+    }
+}
