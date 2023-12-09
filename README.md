@@ -52,7 +52,6 @@ Implement proper error handling throughout the application. Use global error han
 ### **Sample Error Response:**
 
 ```json
-jsonCopy code
 {
     "success": false,
     "message": "Duplicate Key Error!",
@@ -74,7 +73,6 @@ jsonCopy code
 - **Request Body:**
     
     ```json
-    
     {
         "title": "Sample Course",
         "instructor": "Jane Doe",
@@ -98,7 +96,6 @@ jsonCopy code
 - **Response:**
     
     ```json
-    jsonCopy code
     {
         "success": true,
         "statusCode": 201,
@@ -134,7 +131,6 @@ jsonCopy code
 - **Response:**
     
     ```json
-    
     {
         "success": true,
         "statusCode": 200,
@@ -176,7 +172,6 @@ jsonCopy code
 - **Request Body:**
     
     ```json
-    
     {
         "name": "Programming"
     }
@@ -186,7 +181,6 @@ jsonCopy code
 - **Response:**
     
     ```json
-    
     {
         "success": true,
         "statusCode": 201,
@@ -205,7 +199,6 @@ jsonCopy code
 - **Response:**
     
     ```json
-    
     {
         "success": true,
         "statusCode": 200,
@@ -227,7 +220,6 @@ jsonCopy code
 - **Request Body:**
     
     ```json
-    
     {
         "courseId": "123456789012345678901234",
         "rating": 4,
@@ -238,7 +230,6 @@ jsonCopy code
 - **Response:**
     
     ```json
-    
     {
         "success": true,
         "statusCode": 201,
@@ -261,7 +252,6 @@ jsonCopy code
     - You can send the partial body data to update the fields you want to update or the full data if you want to update every field of a course. Ensure dynamic updating for both primitive and non-primitive data to prevent the mutation of non-primitive data. (click here for more details)
     
     ```json
-    
     {
         "title": "Updated Title",
         "instructor": "New Instructor",
