@@ -23,7 +23,7 @@
     - **endDate (String):** The end date of the course.
     - **language (String):** The language in which the course is conducted.
     - **provider (String):** The provider of the course.
-    - **durationInWeeks (Integer):** This represents the course's entire duration in weeks, **calculated from the start and end dates**. The resulting number is rounded up to the nearest integer, ensuring that the duration is expressed solely as an integer with no allowance for floating-point numbers.
+    - **durationInWeeks (Integer):**  This represents the course's overall duration in weeks, **calculated by applying the ceil function to the numeric value derived from the start and end dates**. The resulting number is rounded up to the nearest integer, ensuring that the duration is expressed solely as an integer with no allowance for floating-point numbers.
     - **details (Object):**
         - l**evel (string):** e.g., Beginner, Intermediate, Advanced.
         - **description (string):** Detailed description of the course
