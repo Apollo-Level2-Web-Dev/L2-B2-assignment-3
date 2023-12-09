@@ -19,6 +19,7 @@
     - **price (Number):** The price of the course.
     - **tags(Array of Object):** The "tags" field is an array of objects, each having a "name" (string) and "isDeleted" (boolean) property.
     - **startDate (String):** The start date of the course.
+    - **endDate (String):** The end date of the course.
     - **language (String):** The language in which the course is conducted.
     - **provider (String):** The provider of the course.
     - **durationInWeeks (Integer):** The total duration of the course in weeks (duration should must be in integer. Floating point number not allowed).
@@ -122,6 +123,7 @@ Implement proper error handling throughout the application. Use global error han
             }
         ],
         "startDate": "2023-01-15",
+        "endDate":"2023-03-14",
         "language": "English",
         "provider": "Tech Academy",
         "durationInWeeks": 12,
@@ -134,7 +136,9 @@ Implement proper error handling throughout the application. Use global error han
 ```
     
 
-### **2. Get Paginated and Filtered Courses. Don’t use the technique which is shown in the module. use your implementation for pagination.**
+### **2. Get Paginated and Filtered Courses. Don’t use the query builder technique which is shown in the module. Use your own implementation for pagination & filtering.**
+
+- Feel free to utilize raw queries or aggregations. You have the option to search on Google, explore YouTube, read various blogs and articles, or seek assistance from ChatGPT or other resources.
 
 - **Endpoint:** **`GET /api/courses`**
 - **Query Parameters:**
@@ -168,6 +172,7 @@ Implement proper error handling throughout the application. Use global error han
                 }
             ],
             "startDate": "2023-01-15",
+            "endDate":"2023-03-14",
             "language": "English",
             "provider": "Tech Academy",
             "durationInWeeks": 12,
