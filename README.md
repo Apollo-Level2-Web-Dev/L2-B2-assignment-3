@@ -36,7 +36,7 @@
 
 - **Fields:**
     - **courseId (Object ID):** A reference to the course collection.
-    - **rating (Number):** The rating given by the user (e.g., 1 to 5).
+    - **rating (Number):** The user's rating, which falls within the range of 1 to 5.
     - **comment (String):** The comment or review text provided by the user.
 
 ## **Error Handling:**
@@ -142,7 +142,7 @@ Implement proper error handling throughout the application. Use global error han
 
 - **Endpoint:** **`GET /api/courses`**
 - **Query Parameters:**
-    - page, limit, sortBy, sortOrder, minPrice, maxPrice, tags(name of the tag), startDate, language, provider, durationInWeeks, and level.
+    - page, limit, sortBy, sortOrder, minPrice, maxPrice, tags(name of the tag), startDate, endDate, language, provider, durationInWeeks, and level.
 - **Response:**
     
 ```json
@@ -424,9 +424,9 @@ Implement proper error handling throughout the application. Use global error han
 }
 ```
     
-    ### **Example of Updating Primitive Data:**
+### **Example of Updating Primitive Data:**
     
-    Suppose we have a course with the following details:
+Suppose we have a course with the following details:
     
 ```json
 {
