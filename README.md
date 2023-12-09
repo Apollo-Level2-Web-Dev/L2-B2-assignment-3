@@ -185,7 +185,7 @@ Implement proper error handling throughout the application. Use global error han
 - Feel free to utilize raw queries or aggregations. You have the option to search on Google, explore YouTube, read various blogs and articles, or seek assistance from ChatGPT or other resources.
 
 - **Endpoint:** **`GET /api/courses`**
-- **Query Parameters for API Requests:**
+#### Query Parameters for API Requests:
 
 When interacting with the API, you can utilize the following query parameters to customize and filter the results according to your preferences.
 
@@ -842,6 +842,6 @@ This ensures that both the specified primitive field ("price") and the non-primi
 
 ### **Deadline:**
 
-- 60 marks: 
-- 50 marks: 
-- 30 marks: 
+- 60 marks: December 13, 2023 11.59PM
+- 50 marks: December 14, 2023 11.59PM
+- 30 marks: After December 14, 2023 11.59PM
