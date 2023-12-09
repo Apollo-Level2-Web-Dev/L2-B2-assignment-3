@@ -21,7 +21,7 @@
     - **startDate (String):** The start date of the course.
     - **language (String):** The language in which the course is conducted.
     - **provider (String):** The provider of the course.
-    - **durationInWeeks (Integer):** The total duration of the course in weeks.
+    - **durationInWeeks (Integer):** The total duration of the course in weeks (duration should must be in integer. Floating point number not allowed).
     - **details (Object):**
         - l**evel (string):** e.g., Beginner, Intermediate, Advanced.
         - **description (string):** Detailed description of the course
