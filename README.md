@@ -185,8 +185,43 @@ Implement proper error handling throughout the application. Use global error han
 - Feel free to utilize raw queries or aggregations. You have the option to search on Google, explore YouTube, read various blogs and articles, or seek assistance from ChatGPT or other resources.
 
 - **Endpoint:** **`GET /api/courses`**
-- **Query Parameters:**
-    - page, limit, sortBy, sortOrder, minPrice, maxPrice, tags(name of the tag), startDate, endDate, language, provider, durationInWeeks, and level.
+- **Query Parameters for API Requests:**
+
+When interacting with the API, you can utilize the following query parameters to customize and filter the results according to your preferences.
+
+    - page: (Optional) Specifies the page number for paginated results. Default is 1.
+    - Example: ?page=2
+  
+    - limit: (Optional) Sets the number of items per page. Default is a predefined limit.
+    - Example: ?limit=10
+
+    - sortBy: (Optional) Specifies the field by which the results should be sorted.
+    - Example: ?sortBy=startDate
+
+    - sortOrder: (Optional) Determines the sorting order, either 'asc' (ascending) or 'desc' (descending).
+    - Example: ?sortOrder=desc
+
+    - minPrice, maxPrice: (Optional) Filters results by a price range.
+    - Example: ?minPrice=20.00&maxPrice=50.00
+
+    - tags: (Optional) Filters results by the name of a specific tag.
+    - Example: ?tags=Programming
+
+    - startDate, endDate: (Optional) Filters results by a date range.
+    - Example: ?startDate=2023-01-01&endDate=2023-12-31
+
+    - language: (Optional) Filters results by the language of the course.
+    - Example: ?language=English
+
+    - provider: (Optional) Filters results by the course provider.
+    - Example: ?provider=Tech Academy
+
+    - durationInWeeks: (Optional) Filters results by the duration of the course in weeks.
+    - Example: ?durationInWeeks=8
+
+    - level: (Optional) Filters results by the difficulty level of the course.
+    - Example: ?level=Intermediate
+
 - **Response:**
     
 ```json
