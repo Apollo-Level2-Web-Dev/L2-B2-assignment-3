@@ -266,7 +266,7 @@ Implement proper error handling throughout the application. Use global error han
 
 - **Endpoint:** **`PUT /api/courses/:courseId`**
 - **Request Body:**
-    - You can send the partial body data to update the fields you want to update or the full data if you want to update every field of a course. Ensure dynamic updating for both primitive and non-primitive data to prevent the mutation of non-primitive data. (click here for more details)
+    - You can send the partial body data to update the fields you want to update or the full data if you want to update every field of a course. Ensure dynamic updating for both primitive and non-primitive data to prevent the mutation of non-primitive data. [click here for more details](#example-of-updating-primitive-data)
     
 ```json
 {
@@ -330,7 +330,7 @@ Implement proper error handling throughout the application. Use global error han
 ```
     
 
-### 7**. Get Course by ID with Reviews**
+### 7. Get Course by ID with Reviews**
 
 - **Endpoint:** **`GET /api/courses/:courseId/reviews`**
 - **Response:**
@@ -382,11 +382,11 @@ Implement proper error handling throughout the application. Use global error han
 }  
 ```
     
-    ### 8**. Get the Best Course Based on Average Review**
+### 8. Get the Best Course Based on Average Review**
     
-    - **Endpoint:** **`GET /api/course/best`**
-    - **Response:**
-        - The response includes details about the course, its average rating, and the total number of reviews
+- **Endpoint:** **`GET /api/course/best`**
+- **Response:**
+    - The response includes details about the course, its average rating, and the total number of reviews
     
 ```json
 {
