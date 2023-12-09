@@ -646,10 +646,12 @@ After the update, the new course details would be:
 This ensures that both the specified primitive field ("price") and the non-primitive field ("level" within "details") are updated independently, and the rest of the details remain unchanged. It's essential for maintaining data consistency when updating a mix of primitive and non-primitive data in a complex data structure.
 
 ## Example of updating tags:
-- Current course details with tags
+- Suppose we have a course with the following tags:
 ```json
 {
     "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 29.99,
     "tags": [
         {
             "name": "Programming",
@@ -660,54 +662,46 @@ This ensures that both the specified primitive field ("price") and the non-primi
             "isDeleted": false
         }
     ],
-    // Other fields...
-}
+    "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Beginner",
+        "description": "An introductory course to programming basics",
+    }
+}  
 ```
 
-- Partial update request to mark an existing tag as deleted
+- Now if we make a request for updating the tag with the below data
 ```json
 {
     "tags": [
+        // We want to delete this tag
         {
             "name": "Programming",
             "isDeleted": true
-        }
-    ]
-}
-```
-
-- After the update, the tags would be modified as follows
-```json
-{
-    "title": "Programming Basics",
-    "tags": [
-        {
-            "name": "Web Development",
-            "isDeleted": false
-        }
-    ],
-    // Other fields...
-}
-```
-
-- Partial update request to add a new tag
-```json
-{
-    "tags": [
+        },
+        // We want to add this new tag
         {
             "name": "Mern Development",
             "isDeleted": false
         }
-    ]
-}
+    ],
+  other fields you want to update... 
 
+}
 ```
 
-- After the update, the tags would be modified as follows
+- After the update, the tags will be modified as follows
 ```json
 {
     "title": "Programming Basics",
+    "instructor": "John Doe",
+    "price": 29.99,
     "tags": [
+        
         {
             "name": "Web Development",
             "isDeleted": false
@@ -716,15 +710,24 @@ This ensures that both the specified primitive field ("price") and the non-primi
             "name": "Mern Development",
             "isDeleted": false
         }
-    ],
-    // Other fields...
-}
 
+    ],
+    "startDate": "2023-03-15",
+    "endDate":"2023-11-14",
+    "language": "English",
+    "provider": "Tech Academy",
+    "durationInWeeks": 8,
+    "details": {
+        "level": "Beginner",
+        "description": "An introductory course to programming basics",
+    }
+}
 ```
+
 
 ## Validation with Joi/Zod
 
-- Use Joi/zod to validate incoming data for user and order creation and updating operations.
+- Use Joi/Zod to validate incoming data for user and order creation and updating operations.
 - Ensure that the data adheres to the structure defined in the models.
 - Handle validation errors gracefully and provide meaningful error messages in the API responses.
 
