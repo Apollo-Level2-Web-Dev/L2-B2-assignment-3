@@ -190,8 +190,8 @@ Implement proper error handling throughout the application. Use global error han
 
 - **Endpoint:** **`/api/courses`**
 - **Method:** **GET**
-#### Query Parameters for API Requests:
-
+  
+### Query Parameters for API Requests:
 When interacting with the API, you can utilize the following query parameters to customize and filter the results according to your preferences.
 
 - page: (Optional) Specifies the page number for paginated results. Default is 1.
@@ -227,7 +227,7 @@ When interacting with the API, you can utilize the following query parameters to
 - level: (Optional) Filters results by the difficulty level of the course.
   Example: ?level=Intermediate
 
-- **Response:**
+**Response:**
     
 ```json
 {
