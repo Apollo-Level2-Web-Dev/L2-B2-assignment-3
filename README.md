@@ -537,7 +537,7 @@ Now, the client wants to update the "level" of the course. The request body for 
 }
 ```
     
-In this case, we are updating a non-primitive data type ("details" object), specifically the "level" field within it. The server should handle dynamic updates for non-primitive data correctly, preserving the existing details while updating only the specified fields.
+In this case, we are updating a non-primitive data type ("details" object), specifically the "level" field within it. The server should handle dynamic updates for non-primitive data correctly, preserving the existing fields while updating only the specified fields.
     
 After the update, the new course details would be:
     
@@ -568,7 +568,7 @@ After the update, the new course details would be:
 }
 ```
 
-This ensures that only the specified field within the "details" object is updated, and the rest of the details remain unchanged. It's a crucial aspect of maintaining data consistency when dealing with non-primitive data structures.
+This ensures that only the specified field within the "details" object is updated, and the rest of the fields remain unchanged. It's a crucial aspect of maintaining data consistency when dealing with non-primitive data structures.
     
 ### **Example of Updating Both Primitive and Non-Primitive Data:**
     
@@ -644,6 +644,83 @@ After the update, the new course details would be:
 ```
     
 This ensures that both the specified primitive field ("price") and the non-primitive field ("level" within "details") are updated independently, and the rest of the details remain unchanged. It's essential for maintaining data consistency when updating a mix of primitive and non-primitive data in a complex data structure.
+
+## Example of updating tags:
+- Current course details with tags
+```json
+{
+    "title": "Programming Basics",
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": false
+        },
+        {
+            "name": "Web Development",
+            "isDeleted": false
+        }
+    ],
+    // Other fields...
+}
+```
+
+- Partial update request to mark an existing tag as deleted
+```json
+{
+    "tags": [
+        {
+            "name": "Programming",
+            "isDeleted": true
+        }
+    ]
+}
+```
+
+- After the update, the tags would be modified as follows
+```json
+{
+    "title": "Programming Basics",
+    "tags": [
+        {
+            "name": "Web Development",
+            "isDeleted": false
+        }
+    ],
+    // Other fields...
+}
+```
+
+- Partial update request to add a new tag
+```json
+{
+    "tags": [
+        {
+            "name": "Mern Development",
+            "isDeleted": false
+        }
+    ]
+}
+
+```
+
+- After the update, the tags would be modified as follows
+```json
+{
+    "title": "Programming Basics",
+    "tags": [
+        {
+            "name": "Web Development",
+            "isDeleted": false
+        },
+        {
+            "name": "Mern Development",
+            "isDeleted": false
+        }
+    ],
+    // Other fields...
+}
+
+```
 
 ## Validation with Joi/Zod
 
