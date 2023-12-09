@@ -330,7 +330,7 @@ When interacting with the API, you can utilize the following query parameters to
 {
     "courseId": "123456789012345678901234",
     "rating": 4,
-    "comment": "Great course!"
+    "review": "Great course!"
 }
 ```
     
@@ -345,7 +345,7 @@ When interacting with the API, you can utilize the following query parameters to
         "_id": "32432432kk234243234",
         "courseId": "123456789012345678901234",
         "rating": 4,
-        "comment": "Great course!"
+        "review": "Great course!"
     }
 }
 ```
@@ -467,12 +467,12 @@ When interacting with the API, you can utilize the following query parameters to
             {
                 "courseId": "123456789012345678901234",
                 "rating": 5,
-                "comment": "Awesome course!"
+                "review": "Awesome course!"
             },
             {
                 "courseId": "123456789012345678901234",
                 "rating": 4,
-                "comment": "Great content!"
+                "review": "Great content!"
             }
             // Additional reviews
         ]
