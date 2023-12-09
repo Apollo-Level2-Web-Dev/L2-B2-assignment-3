@@ -842,7 +842,7 @@ This ensures that both the specified primitive field ("price") and the non-primi
 - Share the GitHub repository link and the live deployment link as part of your submission.
 - Include a README file with clear instructions on how to run the application locally.
 
-*Note: Ensure that a minimum of 2 data sets is stored in each collection for the convenience of examination and testing by the examiner.*
+*Important: It's important to have at least 2 sets of data for each collection. This is crucial for examination and testing. In case , the data creation fails,  the examiners can't check other routes, and you'll lose a good amount of marks.*
 
 ### **Deadline:**
 
