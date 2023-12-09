@@ -47,22 +47,66 @@ Implement proper error handling throughout the application. Use global error han
 
 - **success:** false
 - **message:** Error Type → Validation Error, Cast Error, Duplicate Entry
-- **errorMessages:** →Use concatenation for concat the error string
-- **stack**
+- **errorMessage**: A concise error message. Concatenated string containing detailed error information.
+- **errorDetails:**: Detailed information about the error
+- **stack**: Stack trace for debugging purposes
 
 ### **Sample Error Response:**
 
+- For Cast Error
 ```json
 {
     "success": false,
-    "message": "Duplicate Key Error!",
-    "errorMessages": [
-        {
-            "path": "",
-            "message": "E11000 duplicate key error collection: academy.courses index: title_1 dup key: { title: \\"Sample Course\\" }"
-        }
-    ],
-    "stack": "MongoServerError: E11000 duplicate key error collection: academy.courses index: title_1 dup key: { title: \\"Sample Course\\" }\\n    at..."
+    "message": "Invalid ID",
+    "errorMessage": "656dce0f133c4a8a53eb is not a valid ID!",
+    "errorDetails": {
+        "stringValue": "656dce0f133c4a8a53eb",
+        "valueType": "string",
+        "kind": "ObjectId",
+        "value": "656dce0f133c4a8a53eb",
+        "path": "_id",
+        "reason": {},
+        "name": "CastError",
+        "message": "Cast to ObjectId failed for value '656dce0f133c4a8a53eb' (type string) at path '_id' for model 'Faculty'"
+    },
+    "stack": "CastError: Cast to ObjectId failed for value '656dce0f133c4a8a53eb' (type string) at path '_id' for model 'Faculty'\n    at SchemaObjectId.cast (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\schema\\objectId.js:250:11)\n    at SchemaObjectId.SchemaType.applySetters (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\schemaType.js:1219:12)\n    at SchemaObjectId.SchemaType.castForQuery (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\schemaType.js:1633:15)\n    at cast (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\cast.js:375:32)\n    at model.Query.Query.cast (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\query.js:4768:12)\n    at model.Query.Query._castConditions (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\query.js:2200:10)\n    at model.Query._findOne (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\query.js:2484:8)\n    at model.Query.exec (F:\\level2\\first-project\\node_modules\\mongoose\\lib\\query.js:4290:80)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"
+}
+```
+
+- For Validation Error
+```json
+{
+    "success": false,
+    "message": "Validation Error",
+    "errorMessage": "gender is required. email is required.",
+    "err": {
+        "issues": [
+            {
+                "expected": "'male' | 'female' | 'other'",
+                "received": "undefined",
+                "code": "invalid_type",
+                "path": [
+                    "body",
+                    "faculty",
+                    "gender"
+                ],
+                "message": "Required"
+            },
+            {
+                "code": "invalid_type",
+                "expected": "string",
+                "received": "undefined",
+                "path": [
+                    "body",
+                    "faculty",
+                    "email"
+                ],
+                "message": "Required"
+            }
+        ],
+        "name": "ZodError"
+    },
+    "stack": "ZodError: [\n  {\n    "expected": "'male' | 'female' | 'other'",\n    "received": "undefined",\n    "code": "invalid_type",\n    "path": [\n      "body",\n      "faculty",\n      "gender"\n    ],\n    "message": "Required"\n  },\n  {\n    "code": "invalid_type",\n    "expected": "string",\n    "received": "undefined",\n    "path": [\n      "body",\n      "faculty",\n      "email"\n    ],\n    "message": "Required"\n  }\n]\n    at Object.get error [as error] (F:\level2\first-project\node_modules\zod\lib\types.js:43:31)\n    at ZodObject.parseAsync (F:\level2\first-project\node_modules\zod\lib\types.js:166:22)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"
 }
 ```
 
