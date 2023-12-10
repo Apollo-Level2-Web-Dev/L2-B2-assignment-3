@@ -826,7 +826,7 @@ This ensures that both the specified primitive field ("price") and the non-primi
 
 ## Validation with Joi/Zod
 
-- Use Joi/Zod to validate incoming data for user and order creation and updating operations.
+- Use Joi/Zod to validate incoming data for course, category and review creation and updating operations.
 - Ensure that the data adheres to the structure defined in the models.
 - Handle validation errors gracefully and provide meaningful error messages in the API responses.
 
