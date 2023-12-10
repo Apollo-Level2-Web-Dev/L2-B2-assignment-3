@@ -861,7 +861,7 @@ This ensures that both the specified primitive field ("price") and the non-primi
 
 - Provide the GitHub repository link and ensure there is a README file with explicit instructions for running the application locally.
 - Live deployment link
-- Provide a recorded video (up to 10 minutes) showcasing your project's endpoints and functionalities using Postman.
+- Submit a recorded video (maximum 10 minutes) demonstrating your project's endpoints and functionalities using Postman, with a focus on features such as pagination, filtering, error handling, dynamic updating, and other key components.
 
 *Important: It's important to have at least 2 sets of data for each collection. This is crucial for examination and testing. In case , the data creation fails,  the examiners can't check other routes, and you'll lose a good amount of marks.*
 
