@@ -859,8 +859,9 @@ This ensures that both the specified primitive field ("price") and the non-primi
 
 ### **Submission:**
 
-- Share the GitHub repository link and the live deployment link as part of your submission.
-- Include a README file with clear instructions on how to run the application locally.
+- Provide the GitHub repository link and ensure there is a README file with explicit instructions for running the application locally.
+- Live deployment link
+- Provide a recorded video (up to 10 minutes) showcasing your project's endpoints and functionalities using Postman.
 
 *Important: It's important to have at least 2 sets of data for each collection. This is crucial for examination and testing. In case , the data creation fails,  the examiners can't check other routes, and you'll lose a good amount of marks.*
 
