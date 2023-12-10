@@ -482,7 +482,7 @@ When interacting with the API, you can utilize the following query parameters to
 }  
 ```
     
-### 8. Get the Best Course Based on Average Review**
+### 8. Get the Best Course Based on Average Review (Rating)
     
 - **Endpoint:** **`/api/course/best`**
 - **Method:** **GET**
