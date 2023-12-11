@@ -176,7 +176,7 @@ Implement proper error handling throughout the application. Use global error han
         "endDate":"2023-03-14",
         "language": "English",
         "provider": "Tech Academy",
-        "durationInWeeks": 12, // calculated from the start and end dates
+        "durationInWeeks": 9, // calculated from the start and end dates
         "details": {
             "level": "Intermediate",
             "description": "Detailed description of the course",
@@ -262,7 +262,7 @@ When interacting with the API, you can utilize the following query parameters to
             "endDate":"2023-03-14",
             "language": "English",
             "provider": "Tech Academy",
-            "durationInWeeks": 12,
+            "durationInWeeks": 9,
             "details": {
                 "level": "Intermediate",
                 "description": "Detailed description of the course",
@@ -382,7 +382,7 @@ When interacting with the API, you can utilize the following query parameters to
     "endDate":"2023-03-14",
     "language": "Spanish",
     "provider": "Code Masters",
-    "durationInWeeks": 16,
+    "durationInWeeks": 6,
     "details": {
         "level": "Intermediate",
         "description": "Detailed description of the course"
@@ -414,10 +414,10 @@ When interacting with the API, you can utilize the following query parameters to
             }
         ],
         "startDate": "2023-02-01",
-        "endDate":"2023-11-14",
+        "endDate":"2023-03-14",
         "language": "Spanish",
         "provider": "Code Masters",
-        "durationInWeeks": 16,
+        "durationInWeeks": 6,
         "details": {
             "level": "Intermediate",
             "description": "Detailed description of the course"
@@ -456,10 +456,10 @@ When interacting with the API, you can utilize the following query parameters to
                 }
             ],
             "startDate": "2023-02-01",
-            "endDate":"2023-11-14",
+            "endDate":"2023-03-14",
             "language": "Spanish",
             "provider": "Code Masters",
-            "durationInWeeks": 16,
+            "durationInWeeks": 6,
             "details": {
                 "level": "Intermediate",
                 "description": "Detailed description of the course"
@@ -512,10 +512,10 @@ When interacting with the API, you can utilize the following query parameters to
                 }
             ],
             "startDate": "2023-02-01",
-            "endDate":"2023-11-14",
+            "endDate":"2023-03-14",
             "language": "Spanish",
             "provider": "Code Masters",
-            "durationInWeeks": 16,
+            "durationInWeeks": 6,
             "details": {
                 "level": "Intermediate",
                 "description": "Detailed description of the course"
@@ -547,10 +547,10 @@ Suppose we have a course with the following details:
         }
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Beginner",
         "description": "An introductory course to programming basics",
@@ -584,10 +584,10 @@ In this case, we are updating a primitive data type (price), and it's straightfo
         }
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Beginner",
         "description": "An introductory course to programming basics",
@@ -615,10 +615,10 @@ Suppose we have a course with the following details:
         }
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Beginner",
         "description": "An introductory course to programming basics",
@@ -656,10 +656,10 @@ After the update, the new course details would be:
         }
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Intermediate", // Updated value
         "description": "An introductory course to programming basics",
@@ -689,10 +689,10 @@ Suppose we have a course with the following details:
         }
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Beginner",
         "description": "An introductory course to programming basics",
@@ -731,10 +731,10 @@ After the update, the new course details would be:
         }
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Intermediate", // Updated value
         "description": "An introductory course to programming basics",
@@ -762,10 +762,10 @@ This ensures that both the specified primitive field ("price") and the non-primi
         }
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Beginner",
         "description": "An introductory course to programming basics",
@@ -812,10 +812,10 @@ This ensures that both the specified primitive field ("price") and the non-primi
 
     ],
     "startDate": "2023-03-15",
-    "endDate":"2023-11-14",
+    "endDate":"2023-04-14",
     "language": "English",
     "provider": "Tech Academy",
-    "durationInWeeks": 8,
+    "durationInWeeks": 4,
     "details": {
         "level": "Beginner",
         "description": "An introductory course to programming basics",
