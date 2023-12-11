@@ -440,7 +440,7 @@ When interacting with the API, you can utilize the following query parameters to
     "message": "Course and Reviews retrieved successfully",
     "data": {
         "course": {
-            "_id": "23245dsfd453242348rFcg",
+            "_id": "123456789012345678901234",
             "title": "Updated Title",
             "instructor": "New Instructor",
             "categoryId": "123456789012345678901234",
