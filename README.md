@@ -202,7 +202,7 @@ When interacting with the API, you can utilize the following query parameters to
 - limit: (Optional) Sets the number of items per page. Default is a predefined limit.
   Example: ?limit=10
 
-- sortBy: (Optional) Specifies the field by which the results should be sorted. Only applicable to the following fields: `title`, `price`, `startDate`, `endDate`, `language`, `duration`.
+- sortBy: (Optional) Specifies the field by which the results should be sorted. Only applicable to the following fields: `title`, `price`, `startDate`, `endDate`, `language`, `durationInWeeks`.
   Example: ?sortBy=startDate
 
 - sortOrder: (Optional) Determines the sorting order, either 'asc' (ascending) or 'desc' (descending).
